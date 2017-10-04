@@ -11,8 +11,9 @@ def read(filename):
     dat = fob.readlines()
     lines = []
     for i in dat:
-        lines+=i.replace("\n")
+        lines+=i.replace("\n").split()
+        
     Vx = np.array(lines,"float")    
-    Vx.shape = (len(dat),2)
+    Vx.shape = (len(dat),len(i))
     return Vx 
 
