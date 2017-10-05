@@ -45,12 +45,12 @@ def verlet(x0,p0,m,Data,dt,T,lamda) :
     """
     Verlet algorithm for only for 1 step
     """
-    F1 , _  = getF_V(x0,Data)  
+    F1 , _  = getF_V(x0,Data) 
     x = x0 + p0*dt/m + (F1*dt**2)/(2*m)
     F2 , _  = getF_V(x,Data)
-    #Add random Force
-    F1 += randomForce(T,lamda)
-    F2 += randomForce(T,lamda)
+    #Add random Force and Damping
+    F1 += randomForce(T,lamda) + dampingForce(lamda,p0,m )
+    F2 += randomForce(T,lamda) + dampingForce(lamda,p0,m )
     p = p0 + (F1+F2)*dt/2
     return  x , p 
 
@@ -63,3 +63,11 @@ def randomForce(T,lamda):
     sigma = (T*lamda)**0.5
     F = random.gauss(0,sigma)
     return F
+
+def dampingForce(lamda,p,m ):
+    """
+    Damping Force
+    """
+    return -lamda*p/m
+
+
