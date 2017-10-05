@@ -16,25 +16,28 @@ def read(fob):
     Data.shape = (len(dat),Column)
     return Data 
 
-def getForce(x,Data):
+def getF_V(x,Data):
     """
     get the force at x by linear interpolation of Data
     Data is sorted herein
     """
     Data  = Data[Data[:,1].argsort()]
     xData = Data[:,1]
+    vData = Data[:,2]
     fData = Data[:,3]
     minIndex = 0
-    F = False
     for i in range(len(xData)):
         if xData[i] <= x:
             minIndex = i
         else :
             break
     dx = xData[minIndex+1] - xData[minIndex]  
+    dv = vData[minIndex+1] - vData[minIndex]  
     df = fData[minIndex+1] - fData[minIndex]  
-    slope = df/dx 
+    slopeF = df/dx 
+    slopeV = dv/dx 
     Dx = x - xData[minIndex]
-    F = fData[minIndex] + slope*Dx 
-    return F
-
+    V = vData[minIndex] + slopeV*Dx 
+    F = fData[minIndex] + slopeF*Dx 
+    return F,V
+ 

@@ -19,6 +19,6 @@ def test_read():
     
 def test_getForce():  
     Data = np.array([[1,2, 3, 4] , [2, 5, 4, 6]])
-    F = ld.getForce(3.5,Data)
+    F,V = ld.getF_V(3.5,Data)
     assert (np.isclose(F,5.0))
 
