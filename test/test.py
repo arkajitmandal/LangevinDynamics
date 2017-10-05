@@ -25,10 +25,14 @@ def test_getF_V():
 
 def test_Verlet():
     import random
-    x0 = random.random()
+    x0 =  1 + random.random()
     p0 = random.random()
     F = 0.0
+    m = 1.0
     dt = 0.2
-    x, p = ld.verlet(x0,p0,F,dt)
+    Data = np.array([[1,0,0,0],[2,2,0,0]])
+    x, p = ld.verlet(x0,p0,m,Data,dt)
     assert (p0 == p) , "Verlet introducing spurious force"
+    assert (x0 != x) or (p0 == 0.0) , "Position should change"
+
 
