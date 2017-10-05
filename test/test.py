@@ -32,7 +32,7 @@ def test_Verlet():
     F = 0.0
     m = 1.0
     dt = 0.2
-    Data = np.array([[1,0,0,0],[2,2,0,0]])
+    Data = np.array([[1,0,0,0],[2,2,0,0],[3,5,0,0],[4,10,0,0]])
     x, p = ld.verlet(x0,p0,m,Data,dt,T,lamda)
     assert (p0 == p) , "Verlet introducing spurious force"
     assert (x0 != x) or (p0 == 0.0) , "Position should change"
