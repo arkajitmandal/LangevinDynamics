@@ -17,4 +17,24 @@ def read(fob):
     return Data 
 
 def getForce(x,Data):
-    return 0
+    """
+    get the force at x by linear interpolation of Data
+    Data is sorted herein
+    """
+    Data  = Data[Data[:,1].argsort()]
+    xData = Data[:,1]
+    fData = Data[:,3]
+    minIndex = 0
+    F = False
+    for i in range(len(xData)):
+        if xData[i] <= x:
+            minIndex = i
+        else :
+            break
+    dx = xData[minIndex+1] - xData[minIndex]  
+    df = fData[minIndex+1] - fData[minIndex]  
+    slope = df/dx 
+    Dx = x - xData[minIndex]
+    F = fData[minIndex] + slope*Dx 
+    return F
+
