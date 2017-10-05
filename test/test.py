@@ -25,14 +25,21 @@ def test_getF_V():
 
 def test_Verlet():
     import random
+    T = 5.0
+    lamda = 0.0
     x0 =  1 + random.random()
     p0 = random.random()
     F = 0.0
     m = 1.0
     dt = 0.2
     Data = np.array([[1,0,0,0],[2,2,0,0]])
-    x, p = ld.verlet(x0,p0,m,Data,dt)
+    x, p = ld.verlet(x0,p0,m,Data,dt,T,lamda)
     assert (p0 == p) , "Verlet introducing spurious force"
     assert (x0 != x) or (p0 == 0.0) , "Position should change"
 
+def test_randomForce():
+    T = 5.0
+    lamda = 0.0
+    F = ld.randomForce(T,lamda)
+    assert (F == 0.0) , "The distribution should become Delta function in this limit"
 
