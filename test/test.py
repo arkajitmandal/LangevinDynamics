@@ -24,6 +24,7 @@ def test_getF_V():
 
 
 def test_Verlet():
+    import random
     x0 = random.randint()
     p0 = random.random()
     F = 0.0
