@@ -40,4 +40,5 @@ def getF_V(x,Data):
     V = vData[minIndex] + slopeV*Dx 
     F = fData[minIndex] + slopeF*Dx 
     return F,V
- 
+def verlet(x0,p0,F,dt) :
+    return 0 ,0
