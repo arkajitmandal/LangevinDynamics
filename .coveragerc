@@ -1,2 +1,2 @@
-omit = lans/visualization.py
+omit = LangevinDynamics/visualization.py
 
