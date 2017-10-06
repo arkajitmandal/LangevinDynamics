@@ -1,5 +1,7 @@
 *.pyc
-.DS_Store
+*.DS_Store
 __pycache__
-Langevin_Dynamics_Simulator.egg-info
 .coverage
+.vscode/*
+.cache/*
+*.egg-info/*
