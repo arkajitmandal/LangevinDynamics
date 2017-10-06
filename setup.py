@@ -9,7 +9,7 @@ with open('requirements.txt') as f:
 install_requires = [x.strip() for x in all_reqs if 'git+' not in x] 
 
 setup(name='Langevin Dynamics Simulator',
-      version='0.02',
+      version='0.03',
       description='A 1D langevin simulator',
       long_description=long_description,
       author='Arkajit Mandal',
@@ -18,7 +18,7 @@ setup(name='Langevin Dynamics Simulator',
       packages=["LangevinDynamics"],
       install_requires=install_requires,
       entry_points = { 
-          'console_scripts' : ['langevin = LangevinDynamics.show:start']
+          'console_scripts' : ['langevin = LangevinDynamics.interface:start']
           }
       )
 
