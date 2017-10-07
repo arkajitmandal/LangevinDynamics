@@ -65,7 +65,7 @@ def test_interface():
     from LangevinDynamics import interface as inter
     runner = CliRunner()
     result = runner.invoke(inter.start, ["--x", "0" , "--v" ,  "1","--temp" ,"1" , "--lamda", "1","--m" , "1","--dt","0.1","--steps" ,"10", "--o","out.dat","--i", "Test"]   )
-    assert  result.output == "Test\n", "console command not working" 
+    assert  result.output.split("\n")[0] == "Test", "console command not working" 
 def test_gui():
     from LangevinDynamics import gui_interface as gui
     f = gui.gui(["x","p"],False)
