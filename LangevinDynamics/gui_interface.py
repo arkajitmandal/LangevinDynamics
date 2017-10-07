@@ -25,12 +25,12 @@ def select(fname):
     fname[-1].insert(0,vname)
 
 def callback(element):
+    from tkinter import messagebox
     val = [] 
     go = True
     for i in element:
         val.append(i.get())
         if i.get() == "":
-            from tkinter import messagebox
             messagebox.showinfo("Some values missing", "You are missing some input!!")
             go = False
             break
