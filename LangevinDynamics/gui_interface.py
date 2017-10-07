@@ -29,7 +29,7 @@ def callback(element):
     go = True
     for i in element:
         val.append(i.get())
-        if i.get() = "":
+        if i.get() == "":
             from tkinter import messagebox
             messagebox.showinfo("Some values missing", "You are missing some input!!")
             go = False
