@@ -1,6 +1,6 @@
 """This is the code for Langevin Dynamics"""
 import numpy as np 
-
+import os
 def read(fob):
     """
     reads a text file with space separated values
@@ -74,12 +74,12 @@ def run(x,p,m,T,lamda,filename,dt,steps,out):
     Out = True
     if (out != False) :
         fob = open(out,"w+" )
-    import os
+    else:
+        Out  = [[0,x,p]]
     if (filename[0] != False):
         Data = read( open(filename,"r"))
     else:
         Data = filename[1]
-        Out  = [[0,x,p]]
     for t in range(int(steps)):
         x,p = verlet(x,p,m,Data,dt,T,lamda)
         thisLine = '{: <20} \t {: <20} \t{: <20} \t{: <20}\n'.format(t+1,dt*(t+1),x,p/m)

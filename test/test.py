@@ -58,5 +58,5 @@ def test_run():
     p = random.random()
     Out = ld.run(x,p,2,0,0,Data,0.1,2,False)
     assert  np.isclose(Out[-1][1] , x+ (p*0.1)) , "Propagation not Correct"
-
+    assert  ld.run(x,p,2,0,0,Data,0.1,2,"o.dat") == True , "run function works !"
 
