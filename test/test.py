@@ -50,4 +50,14 @@ def test_dampingForce():
 
 def test_run():
     Data = [False,np.array([[1,0,0,0],[2,2,0,0],[3,5,0,0],[4,10,0,0]])]
-    Out = ld.run(0,0,2,1,2,Data,0.1,2,False)
+    import random
+    x = random.random()
+    Out = ld.run(x,0,2,0,0,Data,0.1,2,False)
+    assert  ( len(Out) ==3 ), "Number of steps ran is not correct"
+    assert  (Out[-1][1] == x ) ,"Propagation Error"
+    p = random.random()
+    Out = ld.run(x,p,2,0,0,Data,0.1,2,False)
+    
+    assert  Out[-1][1] == x+ (p*0.1) , "Propagation not Correct"
+
+
