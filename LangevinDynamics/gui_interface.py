@@ -20,7 +20,7 @@ def gui(element,show):
         tk.mainloop()
     return elementList,labelList        
 
-def select(fname):
+def select(fname) :  # pragma: no cover
     vname = filedialog.askopenfilename(initialdir = "/",title = "Select file for potential")
     fname[-1].insert(0,vname)
 
