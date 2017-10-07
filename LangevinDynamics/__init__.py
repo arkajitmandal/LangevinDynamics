@@ -71,16 +71,20 @@ def dampingForce(lamda,p,m ):
     return -lamda*p/m
 
 def run(x,p,m,T,lamda,filename,dt,steps,out):
-    fob = open(out,"w+" )
+    if (out != False) :
+        fob = open(out,"w+" )
     import os
-    Data = read( open(filename,"r"))
+    if (filename[0] != False):
+        Data = read( open(filename,"r"))
+    else:
+        Data = filename[1]
     Out  = np.array([0,x,p])
-    for t in range(int(steps)):
+    for t in range(int(steps)+1):
         x,p = verlet(x,p,m,Data,dt,T,lamda)
         Out = np.concatenate((Out,[dt*t,x,p])) 
-        thisLine = '{: <20} \t{: <20} \t{: <20}\n'.format(dt*t,x,p)
-        fob.writelines(thisLine)
-    fob.close()    
+        thisLine = '{: <20} \t {: <20} \t{: <20} \t{: <20}\n'.format(t+1,dt*(t+1),x,p)
+        if (out !=False) :
+            fob.writelines(thisLine)
+    if (out !=False) :
+        fob.close()    
     return Out
-def demo():
-    print("""This is completely fine """)
