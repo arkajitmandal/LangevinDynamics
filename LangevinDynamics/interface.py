@@ -1,3 +1,4 @@
+import os
 import click
 @click.command()
 @click.option('--x', prompt='Initial Position, x', help='Input initial position')
