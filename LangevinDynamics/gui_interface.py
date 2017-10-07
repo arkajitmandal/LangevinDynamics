@@ -14,7 +14,7 @@ def gui(element,show):
         
     a = tk.Button(root, text="browse file", width=10, command=lambda: select(elementList))
     a.pack()
-    b = tk.Button(root, text="get", width=10, command=lambda:callback(elementList))
+    b = tk.Button(root, text="run", width=10, command=lambda:callback(elementList))
     b.pack()
     if show:
         tk.mainloop()
@@ -25,11 +25,19 @@ def select(fname):
     fname[-1].insert(0,vname)
 
 def callback(element):
-    val = []
+    val = [] 
+    go = True
     for i in element:
         val.append(i.get())
-    print( val)
-    print( filename )
+        if i.get() = "":
+            from tkinter import messagebox
+            messagebox.showinfo("Some values missing", "You are missing some input!!")
+            go = False
+            break
+    if go :
+        import LangevinDynamics as ld
+     
+        ld.run(float(val[0]),float(val[1]),float(val[2]),float(val[3]),float(val[4]),val[-1],float(val[5]),int(val[6]),str(val[7]))
 
 def start():
     element = ["x","p","m","Temperature","lambda","dt","steps","output","filename"]
