@@ -60,5 +60,10 @@ def test_run():
     assert  np.isclose(Out[-1][1] , x+ (p*0.1)) , "Propagation not Correct"
     assert  ld.run(x,p,2,0,0,Data,0.1,2,".useless") == True , "run function works !"
 def test_interface():
+    import click
+    from click.testing import CliRunner
     from LangevinDynamics import interface as inter
+    runner = CliRunner()
+    result = runner.invoke(inter.start, ["--x", "0" , "--v" ,  "1","--temp" ,"1" , "--lamda", "1","--m" , "1","--dt","0.1","--steps" ,"10", "--o","out.dat","--i", "Test"]   )
+    assert  result.output == "Test\n", "console command not working" 
 

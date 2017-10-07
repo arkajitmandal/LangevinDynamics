@@ -12,7 +12,8 @@ import click
 @click.option('--i', prompt='Input file' , help='Name of the input file')
 def start(x,v,temp,lamda,m,dt,steps,o,i):
     import LangevinDynamics as ld
-    i = os.getcwd()+"/" + i
-    ld.run(float(x),float(v)*float(m),float(m),float(temp),float(lamda),i,float(dt),int(steps),o)
-if __name__ == '__main__':
-        start()
+    if (i == "Test"):
+        click.echo( i)
+    else:
+        i = os.getcwd()+"/" + i
+        ld.run(float(x),float(v)*float(m),float(m),float(temp),float(lamda),i,float(dt),int(steps),o)
