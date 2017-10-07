@@ -24,7 +24,7 @@ def select(fname):
     vname = filedialog.askopenfilename(initialdir = "/",title = "Select file for potential")
     fname[-1].insert(0,vname)
 
-def callback(element):
+def callback(element):  # pragma: no cover
     from tkinter import messagebox
     val = [] 
     go = True
@@ -40,7 +40,7 @@ def callback(element):
         messagebox.showinfo("Simulation Complete", "output saved as %s"%(val[7]))
 
 
-def start():
+def start():  # pragma: no cover
     element = ["x","v","m","Temperature","lambda","dt","steps","output filename","input filename"]
     gui(element,True)
 
