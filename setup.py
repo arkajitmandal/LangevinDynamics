@@ -18,7 +18,8 @@ setup(name='Langevin Dynamics Simulator',
       packages=["LangevinDynamics"],
       install_requires=install_requires,
       entry_points = { 
-          'console_scripts' : ['langevin = LangevinDynamics.interface:start']
+          'console_scripts' : ['langevin = LangevinDynamics.interface:start',
+              'langevingui =  LangevinDynamics.gui_interface:start',] 
           }
       )
 
