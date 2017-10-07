@@ -79,7 +79,7 @@ def run(x,p,m,T,lamda,filename,dt,steps,out):
     else:
         Data = filename[1]
     Out  = np.array([0,x,p])
-    for t in range(int(steps)+1):
+    for t in range(int(steps)):
         x,p = verlet(x,p,m,Data,dt,T,lamda)
         Out = np.concatenate((Out,[dt*t,x,p])) 
         thisLine = '{: <20} \t {: <20} \t{: <20} \t{: <20}\n'.format(t+1,dt*(t+1),x,p)
