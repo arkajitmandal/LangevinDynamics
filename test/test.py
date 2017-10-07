@@ -66,4 +66,7 @@ def test_interface():
     runner = CliRunner()
     result = runner.invoke(inter.start, ["--x", "0" , "--v" ,  "1","--temp" ,"1" , "--lamda", "1","--m" , "1","--dt","0.1","--steps" ,"10", "--o","out.dat","--i", "Test"]   )
     assert  result.output == "Test\n", "console command not working" 
-
+def test_gui():
+    from LangevinDynamics import gui_interface as gui
+    f = gui.gui(["x","p"],False)
+    assert len(f[0]) == len(f[1]), "Number of entrybox should be equal to number of labels"
