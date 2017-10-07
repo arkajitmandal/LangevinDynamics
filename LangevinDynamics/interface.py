@@ -12,6 +12,7 @@ import click
 def start(x,p,temp,lamda,m,dt,steps,o,i):
     import LangevinDynamics as ld
     ld.demo()
+    i = os.getcwd() + i
     ld.run(float(x),float(p),float(m),float(temp),float(lamda),i,float(dt),int(steps),o)
 if __name__ == '__main__':
         start()
