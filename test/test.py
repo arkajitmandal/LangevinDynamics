@@ -46,4 +46,4 @@ def test_randomForce():
 
 def test_dampingForce():
     F = ld.dampingForce(5,2,1 )
-    assert F == 10, "Error in Damping Force"
+    assert F == -10, "Error in Damping Force"
