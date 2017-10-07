@@ -86,7 +86,7 @@ def run(x,p,m,T,lamda,filename,dt,steps,out):
         if (out !=False) :
             fob.writelines(thisLine)
         else:
-            Out.append([dt*t,x,p])
+            Out.append([dt*t,x,p/m])
     if (out !=False) :
         fob.close()    
     return Out

@@ -57,7 +57,6 @@ def test_run():
     assert  (Out[-1][1] == x ) ,"Propagation Error"
     p = random.random()
     Out = ld.run(x,p,2,0,0,Data,0.1,2,False)
-    
-    assert  Out[-1][1] == x+ (p*0.1) , "Propagation not Correct"
+    assert  np.isclose(Out[-1][1] , x+ (p*0.1)) , "Propagation not Correct"
 
 
