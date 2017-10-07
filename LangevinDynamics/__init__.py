@@ -82,7 +82,7 @@ def run(x,p,m,T,lamda,filename,dt,steps,out):
         Out  = [[0,x,p]]
     for t in range(int(steps)):
         x,p = verlet(x,p,m,Data,dt,T,lamda)
-        thisLine = '{: <20} \t {: <20} \t{: <20} \t{: <20}\n'.format(t+1,dt*(t+1),x,p)
+        thisLine = '{: <20} \t {: <20} \t{: <20} \t{: <20}\n'.format(t+1,dt*(t+1),x,p/m)
         if (out !=False) :
             fob.writelines(thisLine)
         else:

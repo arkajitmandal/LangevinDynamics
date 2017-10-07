@@ -36,12 +36,12 @@ def callback(element):
             break
     if go :
         import LangevinDynamics as ld
-        ld.run(float(val[0]),float(val[1]),float(val[2]),float(val[3]),float(val[4]),val[-1],float(val[5]),int(val[6]),str(val[7]))
+        ld.run(float(val[0]),float(val[1])*float(val[2]),float(val[2]),float(val[3]),float(val[4]),val[-1],float(val[5]),int(val[6]),str(val[7]))
         messagebox.showinfo("Simulation Complete", "output saved as %s"%(val[7]))
 
 
 def start():
-    element = ["x","p","m","Temperature","lambda","dt","steps","output","filename"]
+    element = ["x","v","m","Temperature","lambda","dt","steps","output","filename"]
     gui(element,True)
 
 

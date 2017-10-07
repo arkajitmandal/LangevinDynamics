@@ -2,7 +2,7 @@ import os
 import click
 @click.command()
 @click.option('--x', prompt='Initial Position, x', help='Input initial position')
-@click.option('--p', prompt='Initial Momentum, p', help='Input initial moemntum')
+@click.option('--v', prompt='Initial Momentum, p', help='Input initial velocity')
 @click.option('--temp', prompt='Temperature, T', help='Input Temperature')
 @click.option('--lamda', prompt='Damping Coefficient , lambda', help='Input damping coefficient')
 @click.option('--m', prompt='mass, m', help='Input mass')
@@ -13,6 +13,6 @@ import click
 def start(x,p,temp,lamda,m,dt,steps,o,i):
     import LangevinDynamics as ld
     i = os.getcwd()+"/" + i
-    ld.run(float(x),float(p),float(m),float(temp),float(lamda),i,float(dt),int(steps),o)
+    ld.run(float(x),float(v)*float(m),float(m),float(temp),float(lamda),i,float(dt),int(steps),o)
 if __name__ == '__main__':
         start()
