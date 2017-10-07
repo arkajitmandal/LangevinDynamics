@@ -41,7 +41,7 @@ def callback(element):
 
 
 def start():
-    element = ["x","v","m","Temperature","lambda","dt","steps","output","filename"]
+    element = ["x","v","m","Temperature","lambda","dt","steps","output filename","input filename"]
     gui(element,True)
 
 
