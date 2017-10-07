@@ -17,3 +17,4 @@ def start(x,v,temp,lamda,m,dt,steps,o,i):
     else:
         i = os.getcwd()+"/" + i
         ld.run(float(x),float(v)*float(m),float(m),float(temp),float(lamda),i,float(dt),int(steps),o)
+    click.echo("output saved in %s"%(o))    
