@@ -5,3 +5,5 @@ __pycache__
 .vscode/*
 .cache/*
 *.egg-info/*
+*.txt
+*.dat
