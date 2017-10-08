@@ -14,9 +14,8 @@ $ pip3 install .
 
 ## What do you need
 
-A text file.
-
-Required Files : a text file containing 4 columns. 
+A text file
+containing 4 columns. 
 Each line have 4 columns; Index, position and the corresponding
 velocity and force. 
 
