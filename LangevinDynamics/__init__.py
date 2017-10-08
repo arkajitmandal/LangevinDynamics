@@ -16,14 +16,13 @@ def read(fob):
     Data.shape = (len(dat),Column)
     return Data 
 
-def getF_V(x,Data):
+def getF(x,Data):
     """
     get the force at x by linear interpolation of Data
     Data is sorted herein
     """
-    Data  = Data[Data[:,1].argsort()]
-    xData = Data[:,1]
-    vData = Data[:,2]
+    Data  = Data[Data[:,1].argsort()] # Data is sorted in case is not
+    xData = Data[:,1]  
     fData = Data[:,3]
     minIndex = 0
     for i in range(len(xData)):
@@ -32,22 +31,19 @@ def getF_V(x,Data):
         else :
             break
     dx = xData[minIndex+1] - xData[minIndex]  
-    dv = vData[minIndex+1] - vData[minIndex]  
     df = fData[minIndex+1] - fData[minIndex]  
     slopeF = df/dx 
-    slopeV = dv/dx 
     Dx = x - xData[minIndex]
-    V = vData[minIndex] + slopeV*Dx 
     F = fData[minIndex] + slopeF*Dx 
-    return F,V
+    return F
 
 def verlet(x0,p0,m,Data,dt,T,lamda) :
     """
     Verlet algorithm for only for 1 step
     """
-    F1 , _  = getF_V(x0,Data) 
+    F1  = getF(x0,Data) 
     x = x0 + p0*dt/m + (F1*dt**2)/(2*m)
-    F2 , _  = getF_V(x,Data)
+    F2  = getF(x,Data)
     #Add random Force and Damping
     F1 += randomForce(T,lamda) + dampingForce(lamda,p0,m )
     F2 += randomForce(T,lamda) + dampingForce(lamda,p0,m )
