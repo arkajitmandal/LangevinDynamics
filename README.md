@@ -27,8 +27,8 @@ that are not exclusively written in the input file will be interpolated.
 
 An example input file :
 
->1	0.0	1	-1 <br /> 
->2	0.2	2 	0  <br />
+>1 &nbsp;&nbsp;&nbsp;&nbsp;	0.0  &nbsp;&nbsp;&nbsp;&nbsp;	1   &nbsp;&nbsp;&nbsp;&nbsp;	-1 <br /> 
+>2 &nbsp;&nbsp;&nbsp;&nbsp;	0.2  &nbsp;&nbsp;&nbsp;&nbsp;	2   &nbsp;&nbsp;&nbsp;&nbsp;	0  <br />
 >3	0.4	2	0  <br />
 >4	0.6 	1 	1  <br /> 
 
