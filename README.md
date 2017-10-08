@@ -27,10 +27,10 @@ that are not exclusively written in the input file will be interpolated.
 
 An example input file :
 
->1 &nbsp;&nbsp;&nbsp;&nbsp;	0.0  &nbsp;&nbsp;&nbsp;&nbsp;	1   &nbsp;&nbsp;&nbsp;&nbsp;	-1 <br /> 
->2 &nbsp;&nbsp;&nbsp;&nbsp;	0.2  &nbsp;&nbsp;&nbsp;&nbsp;	2   &nbsp;&nbsp;&nbsp;&nbsp;	0  <br />
->3	0.4	2	0  <br />
->4	0.6 	1 	1  <br /> 
+>1&nbsp;&nbsp;&nbsp;&nbsp;0.0&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;-1<br /> 
+>2&nbsp;&nbsp;&nbsp;&nbsp;0.2&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;0<br />
+>3&nbsp;&nbsp;&nbsp;&nbsp;0.4&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;0<br />
+>4&nbsp;&nbsp;&nbsp;&nbsp;0.6&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;1<br /> 
 
 So in the given example the particle at position = 0.1 will feel a force of -0.5 and if it evolves 
 to position 0.7 or to -0.1 the program will exit will an error.
