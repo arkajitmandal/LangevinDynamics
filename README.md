@@ -10,7 +10,7 @@ Download the zip, and cd to the directory where setup.py is located.
 On a very lucky day the following should work
 ```sh
 $ pip3 install . 
-```sh
+```
 
 ## What do you need
 
