@@ -42,14 +42,15 @@ def test_randomForce():
     lamda = 0.0
     F = ld.randomForce(T,lamda)
     assert (F == 0.0) , "The distribution should become Delta function in this limit"
-    T = 0.01
+    T = 0.001
     F = 0
     lamda = 0.1
     F = ld.randomForce(T,lamda) 
     assert (F != 0.0) ,  "random force not generated"
     for i in range(1000):
         F +=  ld.randomForce(T,lamda)
-    assert (F <0.1), "average random force must be small"
+    print( F)
+    assert (F <1), "average random force must be small"
 
 def test_dampingForce():
     F = ld.dampingForce(5,2,1 )
