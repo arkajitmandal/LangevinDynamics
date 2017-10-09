@@ -124,7 +124,7 @@ $ langevinshow
 $ Your output file: traj.txt 
 $ Your input file : pot.txt 
 ```
-or a this oneliner
+or this oneliner
 
 ```sh
 $ langevinshow --o traj.txt --i pot.txt 
