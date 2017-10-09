@@ -4,7 +4,10 @@ Welcome to Langevin Dynamics
 ===
 
 This is a 1 dimentional langevin dynamics simulator. 
-![A typical Dynamics](./img/dyn.gif)
+
+<img align="left" width="300"  src="./img/dyn.gif">
+
+
 ## Requirements
 
 The main requirement is that you must have python 3 installed. Other requirements are installed along this program.
