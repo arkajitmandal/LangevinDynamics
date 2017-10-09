@@ -95,7 +95,8 @@ As an alternative you can use the langevingui :
 ```sh
 $ langevingui
 ```
-This would fire up a window with a lot of input boxes. 
+This would fire up a window with a lot of input boxes. This requires the tkinter module of python3. 
+This tkinter comes within python3, so no worries.
 
 |Option | description |
 |-------|---------------|
