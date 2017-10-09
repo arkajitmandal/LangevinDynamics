@@ -49,7 +49,6 @@ def test_randomForce():
     assert (F != 0.0) ,  "random force not generated"
     for i in range(1000):
         F +=  ld.randomForce(T,lamda)
-    print( F)
     assert (F <1), "average random force must be small"
 
 def test_dampingForce():
