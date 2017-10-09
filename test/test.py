@@ -42,7 +42,14 @@ def test_randomForce():
     lamda = 0.0
     F = ld.randomForce(T,lamda)
     assert (F == 0.0) , "The distribution should become Delta function in this limit"
-
+    T = 0.01
+    F = 0
+    lamda = 0.1
+    F = ld.randomForce(T,lamda) 
+    assert (F != 0.0) ,  "random force not generated"
+    for i in range(1000):
+        F +=  ld.randomForce(T,lamda)
+    assert (F <0.1), "average random force must be small"
 
 def test_dampingForce():
     F = ld.dampingForce(5,2,1 )
@@ -50,6 +57,7 @@ def test_dampingForce():
     import random
     F = ld.dampingForce(random.random(),0,random.random() )
     assert F == 0 , "Spurious Damping Force!!"
+
 def test_run():
     Data = [False,np.array([[1,0,0,0],[2,2,0,0],[3,5,0,0],[4,10,0,0]])]
     import random
@@ -60,6 +68,7 @@ def test_run():
     p = random.random()
     Out = ld.run(x,p,2,0,0,Data,0.1,2,".useless")
     assert  np.isclose(Out[-1][1] , x+ (p*0.1)) , "Propagation not Correct"
+
 def test_interface():
     import click
     from click.testing import CliRunner
@@ -67,6 +76,7 @@ def test_interface():
     runner = CliRunner()
     result = runner.invoke(inter.start, ["--x", "0" , "--v" ,  "1","--temp" ,"1" , "--lamda", "1","--m" , "1","--dt","0.1","--steps" ,"10", "--o",".useless","--i", "Test"]   )
     assert  result.output.split("\n")[0] == "Test", "console command not working" 
+
 def test_gui():
     from LangevinDynamics import gui_interface as gui
     f = gui.gui(["x","p"],False)
