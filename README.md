@@ -91,10 +91,9 @@ This will create a output file named "traj.txt"
 <img align="right" width="100"  src="./img/gui.png">
 As an alternative you can use the langevingui : 
 ```sh
-langevingui
+$ langevingui
 ```
 This would fire up a window with a lot of input boxes. 
-
 |Option | description |
 |-------|---------------|
 |   x  |  initial position     |
