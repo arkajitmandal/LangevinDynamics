@@ -20,7 +20,7 @@ setup(name='Langevin Dynamics Simulator',
       entry_points = { 
           'console_scripts' : ['langevin = LangevinDynamics.interface:start',
               'langevingui =  LangevinDynamics.gui_interface:start',
-              'langevinShow = LangevinDynamics.animate:show] 
+              'langevinshow = LangevinDynamics.animate:show',] 
           }
       )
 

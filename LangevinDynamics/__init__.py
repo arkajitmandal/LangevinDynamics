@@ -83,7 +83,7 @@ def run(x,p,m,T,lamda,filename,dt,steps,out):
         Data = read( open(filename,"r"))
     else:
         Data = filename[1]
-    
+    # Dynamics Happens 
     for t in range(int(steps)):
         x,p = verlet(x,p,m,Data,dt,T,lamda)
         thisLine = '{: <20} \t {: <20} \t{: <20} \t{: <20}\n'.format(t+1,dt*(t+1),x,p/m)

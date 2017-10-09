@@ -47,7 +47,9 @@ def test_randomForce():
 def test_dampingForce():
     F = ld.dampingForce(5,2,1 )
     assert F == -10, "Error in Damping Force"
-
+    import random
+    F = ld.dampingForce(random.random(),0,random.random() )
+    assert F == 0 , "Spurious Damping Force!!"
 def test_run():
     Data = [False,np.array([[1,0,0,0],[2,2,0,0],[3,5,0,0],[4,10,0,0]])]
     import random
