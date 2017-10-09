@@ -13,7 +13,8 @@ This is a 1 dimentional langevin dynamics simulator. It has 3 commands:
 
 It uses velocity verlet as the integrator. 
 <br/>
-
+<br/>
+<br/>
 ## Requirements
 
 The main requirement is that you must have python 3 installed. Other requirements are installed along this program.
@@ -53,6 +54,7 @@ So in the given example the particle at position = 0.1 will feel a force of -0.5
 to position 0.7 or to -0.1 the program will exit will an error.
 
 ## Running Langevin
+There are two ways to run langevin; either by passing command line arguments or by using a GUI.
 
 ### Command Line Interface
 The simplest way to run this program is to type 'langevin' in yout terminal and you will be asked to give some inputs.
@@ -60,7 +62,7 @@ The simplest way to run this program is to type 'langevin' in yout terminal and 
 $ langevin
 ```
 
-Alternatively, the following command-line argument can be given :
+Alternatively, the following command-line arguments can be given :
 
 | option | description           |
 |--------|-----------------------|
@@ -84,3 +86,23 @@ $ langevin --x 1 --v 1 --temp 0.2 --lamda 0.1 --m 1 --dt 0.01 --steps 1000 --i "
 
 This will create a output file named "traj.txt"
 
+ ### Graphical User Interface (GUI)
+
+<img align="right" width="100"  src="./img/gui.png">
+As an alternative you can use the langevingui : 
+```sh
+langevingui
+```
+This would fire up a window with a lot of input boxes. 
+
+|Option | description |
+|-------|---------------|
+|   x  |  initial position     |
+|   v  |  initial velocity     |
+| Temperature |  Temperature          |
+| lambda|  damping coefficient  |
+| m   |  mass                 |
+|  dt  |  timestep             |
+|steps |  number of step; runtime = dt x steps | 
+|  o   |  Name of the output file (optional; default = 'out.dat') |
+|  i   |  Name of the input file , click browse to select the file instead |
