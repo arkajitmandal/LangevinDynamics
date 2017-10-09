@@ -4,13 +4,15 @@ Welcome to Langevin Dynamics
 ===
 
 
-<img align="left" width="300"  src="./img/dyn.gif">
+<img align="left" width="350"  src="./img/dyn.gif">
 
 This is a 1 dimentional langevin dynamics simulator. It has 3 commands:
-> langevin -- for running simulation in the command line 
-> langevingui -- for a Graphical User Interface for running simulation
-> langevinshow -- to visualy see an output of this program
+* __langevin__ -- for running simulation in the command line 
+* __langevingui__ -- for a Graphical User Interface for running simulation
+* __langevinshow__ -- to visualy see an output of this program (like the one in the left)
 
+It uses velocity verlet as the integrator. 
+<br/>
 
 ## Requirements
 
