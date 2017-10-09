@@ -4,7 +4,7 @@ Welcome to Langevin Dynamics
 ===
 
 This is a 1 dimentional langevin dynamics simulator. 
-
+![A typical Dynamics](./img/dyn.gif)
 ## Requirements
 
 The main requirement is that you must have python 3 installed. Other requirements are installed along this program.
@@ -43,6 +43,35 @@ An example input file :
 So in the given example the particle at position = 0.1 will feel a force of -0.5 and if it evolves 
 to position 0.7 or to -0.1 the program will exit will an error.
 
+## Running Langevin
+
+### Command Line Interface
+The simplest way to run this program is to type 'langevin' in yout terminal and you will be asked to give some inputs.
+```sh
+$ langevin
+```
+
+Alternatively, the following command-line argument can be given :
+
+| option | description           |
+|--------|-----------------------|
+|   --x  |  initial position     |
+|   --v  |  initial velocity     |
+|  --temp|  Temperature          |
+| --lamda|  damping coefficient  |
+|  --m   |  mass                 |
+|  --dt  |  timestep             |
+|--steps |  number of step; runtime = dt x steps | 
+|  --o   |  Name of the output file (optional; default = 'out.dat') |
+|  --i   |  Name of the input file  |
+| --help |   in case you are lost  |   
 
 
+Thus a simple langevin simulation can be run by running the following command for 10 units of time.
+
+```sh
+$ langevin --x 1 --v 1 --temp 0.2 --lamda 0.1 --m 1 --dt 0.01 --steps 1000 --i "input.txt" --o "traj.txt"
+```
+
+This will create a output file named "traj.txt"
 
