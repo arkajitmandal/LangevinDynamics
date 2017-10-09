@@ -1,3 +1,6 @@
 pytest
 pytest-cov
 coverage-badge
+numpy
+click
+matplotlib

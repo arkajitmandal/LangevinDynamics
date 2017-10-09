@@ -88,16 +88,19 @@ This will create a output file named "traj.txt"
 
  ### Graphical User Interface (GUI)
 
-<img align="right" width="100"  src="./img/gui.png">
+<img align="right" width="340"  src="./img/gui.png">
 
 As an alternative you can use the langevingui : 
 
 ```sh
 $ langevingui
 ```
-This would fire up a window with a lot of input boxes. This requires the tkinter module of python3. 
-This tkinter comes within python3, so no worries.
 
+This would fire up a window with a lot of input boxes.  After plugging in the inputs click on run. After the simulation
+ is done you will get a sucess message.
+
+<br />
+<br />
 |Option | description |
 |-------|---------------|
 |   x  |  initial position     |
@@ -109,3 +112,20 @@ This tkinter comes within python3, so no worries.
 |steps |  number of step; runtime = dt x steps | 
 |  o   |  Name of the output file (optional; default = 'out.dat') |
 |  i   |  Name of the input file , click browse to select the file instead |
+
+## Visualizing trajectory
+
+You can visualize the trajectory by simply typing the following command:
+
+```sh
+$ langevinshow 
+$ Your output file: traj.txt 
+$ Your input file : pot.txt 
+```
+or a this oneliner
+
+```sh
+$ langevinshow --o traj.txt --i pot.txt 
+``` 
+Thats it!!
+
