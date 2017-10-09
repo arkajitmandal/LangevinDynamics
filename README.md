@@ -3,9 +3,13 @@
 Welcome to Langevin Dynamics
 ===
 
-This is a 1 dimentional langevin dynamics simulator. 
 
 <img align="left" width="300"  src="./img/dyn.gif">
+
+This is a 1 dimentional langevin dynamics simulator. It has 3 commands:
+> langevin -- for running simulation in the command line 
+> langevingui -- for a Graphical User Interface for running simulation
+> langevinshow -- to visualy see an output of this program
 
 
 ## Requirements
