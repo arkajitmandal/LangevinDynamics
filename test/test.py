@@ -17,9 +17,9 @@ def test_read():
     assert (dat[0][1] == a) , "data not read properly" 
     assert (dat[1][1] == c) , "data not read properly" 
     
-def test_getF_V():  
+def test_getF():  
     Data = np.array([[1,2, 3, 4] , [2, 5, 4, 6]])
-    F,V = ld.getF_V(3.5,Data)
+    F = ld.getF(3.5,Data)
     assert (np.isclose(F,5.0)) , "Interpolation of F is wrong"
 
 
@@ -52,19 +52,18 @@ def test_run():
     Data = [False,np.array([[1,0,0,0],[2,2,0,0],[3,5,0,0],[4,10,0,0]])]
     import random
     x = random.random()
-    Out = ld.run(x,0,2,0,0,Data,0.1,2,False)
+    Out = ld.run(x,0,2,0,0,Data,0.1,2,".useless")
     assert  ( len(Out) ==3 ), "Number of steps ran is not correct"
     assert  (Out[-1][1] == x ) ,"Propagation Error"
     p = random.random()
-    Out = ld.run(x,p,2,0,0,Data,0.1,2,False)
+    Out = ld.run(x,p,2,0,0,Data,0.1,2,".useless")
     assert  np.isclose(Out[-1][1] , x+ (p*0.1)) , "Propagation not Correct"
-    assert  ld.run(x,p,2,0,0,Data,0.1,2,".useless") == True , "run function works !"
 def test_interface():
     import click
     from click.testing import CliRunner
     from LangevinDynamics import interface as inter
     runner = CliRunner()
-    result = runner.invoke(inter.start, ["--x", "0" , "--v" ,  "1","--temp" ,"1" , "--lamda", "1","--m" , "1","--dt","0.1","--steps" ,"10", "--o","out.dat","--i", "Test"]   )
+    result = runner.invoke(inter.start, ["--x", "0" , "--v" ,  "1","--temp" ,"1" , "--lamda", "1","--m" , "1","--dt","0.1","--steps" ,"10", "--o",".useless","--i", "Test"]   )
     assert  result.output.split("\n")[0] == "Test", "console command not working" 
 def test_gui():
     from LangevinDynamics import gui_interface as gui

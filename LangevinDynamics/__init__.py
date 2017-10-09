@@ -42,49 +42,52 @@ def verlet(x0,p0,m,Data,dt,T,lamda) :
     Verlet algorithm for only for 1 step
     """
     F1  = getF(x0,Data) 
-    x = x0 + p0*dt/m + (F1*dt**2)/(2*m)
+    x = x0 + p0*dt/m + (F1*dt**2)/(2*m) # First Part of Verlet
     F2  = getF(x,Data)
     #Add random Force and Damping
-    F1 += randomForce(T,lamda) + dampingForce(lamda,p0,m )
-    F2 += randomForce(T,lamda) + dampingForce(lamda,p0,m )
-    p = p0 + (F1+F2)*dt/2
+    F1 += randomForce(T,lamda) + dampingForce(lamda,p0,m ) # Force at t1
+    F2 += randomForce(T,lamda) + dampingForce(lamda,p0,m ) # Force at t2
+    p = p0 + (F1+F2)*dt/2   # Second part of Verlet
     return  x , p 
 
 
 def randomForce(T,lamda):
     """
-    random force generetor
+    random force generetor  
+    T is Temperature
+    lamda is the daming parameter
+    Outputs random force
     """
     import random
-    sigma = (T*lamda)**0.5
+    sigma = (T*lamda)**0.5 # Width of gaussian
     F = random.gauss(0,sigma)
     return F
 
 def dampingForce(lamda,p,m ):
     """
-    Damping Force
+    Damping Force 
+    p is momentum
+    m is mass
     """
     return -lamda*p/m
 
 def run(x,p,m,T,lamda,filename,dt,steps,out):
-    Out = True
-    if (out != False) and (out != "False") :
-        fob = open(out,"w+" )
-    else:
-        Out  = [[0,x,p]]
-    if (filename[0] != False):
+    Result = [[0,x,p/m]]
+    fob = open(out,"w+" )
+    
+    # The file input can be given either by a file
+    # or as a Numpy array in the form => [False, [Youdata] ]
+    # This feature is made so that this section can be tested
+    
+    if (filename[0] != False): 
         Data = read( open(filename,"r"))
     else:
         Data = filename[1]
+    
     for t in range(int(steps)):
         x,p = verlet(x,p,m,Data,dt,T,lamda)
         thisLine = '{: <20} \t {: <20} \t{: <20} \t{: <20}\n'.format(t+1,dt*(t+1),x,p/m)
-        if (out !=False)  and ( out != "False" ):
-            fob.writelines(thisLine)
-        else:
-            Out.append([dt*t,x,p/m])
-    try:
-        fob.close()  
-    except:
-        pass
-    return Out
+        fob.writelines(thisLine)
+        Result += [[dt*(t+1),x,p/m ]]
+    fob.close()  
+    return Result 

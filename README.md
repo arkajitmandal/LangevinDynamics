@@ -12,7 +12,7 @@ On a very lucky day the following should work
 $ pip3 install . 
 ```
 
-## What do you need
+## What do you need ?
 
 A text file
 containing 4 columns. 
