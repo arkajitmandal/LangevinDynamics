@@ -98,7 +98,7 @@ $ langevingui
 ```
 
 This would fire up a window with a lot of input boxes.  After plugging in the inputs click on run. After the simulation
- is done you will get a sucess message.
+ is done you will get a success message.
 
 <br />
 <br />
