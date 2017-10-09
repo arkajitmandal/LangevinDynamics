@@ -5,13 +5,22 @@ Welcome to Langevin Dynamics
 
 This is a 1 dimentional langevin dynamics simulator. 
 
+## Requirements
+
+The main requirement is that you must have python 3 installed. Other requirements are installed along this program.
+
 ## Installation
+
 Download the zip, and cd to the directory where setup.py is located. 
 On a very lucky day the following should work
 ```sh
 $ pip3 install . 
 ```
+In case it does not work try this:
 
+```sh
+$ pip3.6 install . --user 
+```
 ## What do you need ?
 
 A text file
@@ -33,5 +42,7 @@ An example input file :
 
 So in the given example the particle at position = 0.1 will feel a force of -0.5 and if it evolves 
 to position 0.7 or to -0.1 the program will exit will an error.
+
+
 
 
