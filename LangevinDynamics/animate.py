@@ -1,7 +1,7 @@
-import click
-@click.command()
-@click.option("--o",prompt = "Your output file",help= "Your output file from langevin")
-@click.option("--i",prompt = "Your input file containing the potential",help= "Your output file from langevin")
+import click  # pragma: no cover
+@click.command()  # pragma: no cover
+@click.option("--o",prompt = "Your output file",help= "Your output file from langevin")  # pragma: no cover
+@click.option("--i",prompt = "Your input file containing the potential",help= "Your output file from langevin")  # pragma: no cover
 def show(traj,PES): # pragma: no cover
     import LangevinDynamics as ld
     import numpy as np
