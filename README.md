@@ -15,6 +15,7 @@ It uses velocity verlet as the integrator.
 <br/>
 <br/>
 <br/>
+
 ## Requirements
 
 The main requirement is that you must have python 3 installed. Other requirements are installed along this program.
@@ -101,6 +102,7 @@ This would fire up a window with a lot of input boxes.  After plugging in the in
 
 <br />
 <br />
+
 |Option | description |
 |-------|---------------|
 |   x  |  initial position     |
