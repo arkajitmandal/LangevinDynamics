@@ -4,7 +4,7 @@ Welcome to Langevin Dynamics
 ===
 
 
-<img align="left" width="350"  src="./img/dyn.gif">
+<img align="right" width="350"  src="./img/dyn.gif">
 
 This is a 1 dimentional langevin dynamics simulator. It has 3 commands:
 * __langevin__ -- for running simulation in the command line 
